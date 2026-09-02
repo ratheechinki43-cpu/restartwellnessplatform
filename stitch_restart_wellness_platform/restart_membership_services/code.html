@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ReStart - Services &amp; Pricing</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600&amp;family=Space+Grotesk:wght@500;700&amp;family=Inter:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "outline": "#727972",
+                      "secondary": "#31647a",
+                      "secondary-fixed-dim": "#9bcee6",
+                      "on-secondary-fixed": "#001f2a",
+                      "surface-variant": "#e2e3de",
+                      "surface-container": "#edeee9",
+                      "primary-container": "#567d62",
+                      "on-primary-fixed": "#00210f",
+                      "secondary-container": "#b1e4fd",
+                      "inverse-on-surface": "#f0f1ec",
+                      "background": "#f9faf5",
+                      "on-tertiary": "#ffffff",
+                      "on-background": "#1a1c19",
+                      "on-surface-variant": "#424942",
+                      "on-tertiary-fixed": "#291800",
+                      "primary": "#3e644a",
+                      "on-error": "#ffffff",
+                      "inverse-primary": "#a7d1b0",
+                      "surface-tint": "#41674c",
+                      "surface": "#f9faf5",
+                      "on-tertiary-fixed-variant": "#614000",
+                      "inverse-surface": "#2e312e",
+                      "outline-variant": "#c1c8c0",
+                      "tertiary-container": "#9d6a03",
+                      "surface-container-low": "#f3f4ef",
+                      "surface-container-high": "#e7e9e4",
+                      "on-surface": "#1a1c19",
+                      "surface-dim": "#d9dad6",
+                      "tertiary-fixed": "#ffddb0",
+                      "on-secondary": "#ffffff",
+                      "on-secondary-fixed-variant": "#134c61",
+                      "tertiary": "#7d5400",
+                      "surface-container-highest": "#e2e3de",
+                      "secondary-fixed": "#bde9ff",
+                      "surface-bright": "#f9faf5",
+                      "tertiary-fixed-dim": "#fabb57",
+                      "on-secondary-container": "#34677c",
+                      "error": "#ba1a1a",
+                      "error-container": "#ffdad6",
+                      "on-primary": "#ffffff",
+                      "primary-fixed": "#c2edcb",
+                      "on-tertiary-container": "#fffbff",
+                      "on-primary-container": "#f6fff4",
+                      "on-primary-fixed-variant": "#294e36",
+                      "surface-container-lowest": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "primary-fixed-dim": "#a7d1b0"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "unit": "8px",
+                      "container-padding-desktop": "40px",
+                      "container-padding-mobile": "20px",
+                      "gutter": "16px",
+                      "section-gap": "48px"
+              },
+              "fontFamily": {
+                      "headline-lg-mobile": ["Sora"],
+                      "headline-lg": ["Sora"],
+                      "label-caps": ["Space Grotesk"],
+                      "display-lg": ["Sora"],
+                      "body-md": ["Inter"],
+                      "stats-lg": ["Space Grotesk"]
+              },
+              "fontSize": {
+                      "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "label-caps": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                      "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "stats-lg": ["40px", {"lineHeight": "1", "letterSpacing": "-0.03em", "fontWeight": "500"}]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .breathing-glow {
+            animation: breathe 4s ease-in-out infinite;
+        }
+        @keyframes breathe {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(86, 125, 98, 0); }
+            50% { box-shadow: 0 0 20px 4px rgba(86, 125, 98, 0.15); }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col">
+<!-- TopAppBar (Hidden on Mobile) -->
+<header class="hidden md:flex w-full top-0 sticky bg-background justify-between items-center h-20 px-container-padding-desktop max-w-[1100px] mx-auto z-40 transition-shadow duration-300" id="top-bar">
+<div class="flex items-center gap-4">
+<span class="font-headline-lg text-headline-lg font-semibold text-primary">ReStart</span>
+</div>
+<nav class="flex items-center gap-8">
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors flex items-center gap-2 group" href="#">
+<span class="font-label-caps text-label-caps">Home</span>
+</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors flex items-center gap-2 group" href="#">
+<span class="font-label-caps text-label-caps">Plan</span>
+</a>
+<a class="text-primary font-bold border-b-2 border-primary hover:text-primary transition-colors flex items-center gap-2 group pb-1" href="#">
+<span class="font-label-caps text-label-caps">Discover</span>
+</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors flex items-center gap-2 group" href="#">
+<span class="font-label-caps text-label-caps">AI</span>
+</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors flex items-center gap-2 group" href="#">
+<span class="font-label-caps text-label-caps">Profile</span>
+</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="font-label-caps text-label-caps text-primary hover:text-primary-fixed transition-colors">Support</button>
+<div class="w-10 h-10 rounded-full bg-surface-container overflow-hidden">
+<img alt="User profile avatar" class="w-full h-full object-cover" data-alt="A small circular avatar image showing a calm, abstract landscape with soft green and beige tones, representing a peaceful sanctuary aesthetic, suitable for a user profile picture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIpUZMyasQKLy5BdPyTIqzyF4wJ8p0jhYCI4KmeKQRSmNv4LDLneJhhLywJEGHTqFkCXmjaaW7sksIp1FYTWjXeDBKdSZGrF_OiKUvVfFWDbt3XzqP63ivF79LGBS1Wvq3Ks8D0YEKtQDYTw2qNEbujX51DdFkomy5BhqJ2Cpe9cOT5nXZhl2UMlntH2_vovo8AKRJGJnG3K9Q5c4jTmmnPRvCM-sylxanmAaXaFoTdCL3OvJCVo5x"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full max-w-[1100px] mx-auto px-container-padding-mobile md:px-container-padding-desktop py-section-gap flex flex-col gap-12">
+<!-- Header Section -->
+<section class="text-center max-w-2xl mx-auto flex flex-col gap-4 mt-8">
+<h1 class="font-display-lg text-display-lg text-on-background">Find Your Pace.</h1>
+<p class="font-body-md text-body-md text-on-surface-variant opacity-80">Choose the path that best supports your journey. ReStart Free offers a strong foundation, while ReStart+ provides deeper, AI-guided personalization for your sanctuary.</p>
+<!-- Billing Toggle -->
+<div class="flex justify-center items-center gap-4 mt-6">
+<span class="font-label-caps text-label-caps text-on-surface-variant" id="label-monthly">Monthly</span>
+<button aria-label="Toggle annual billing" aria-pressed="false" class="w-14 h-8 bg-surface-container rounded-full relative transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background" id="billing-toggle">
+<div class="w-6 h-6 bg-primary rounded-full absolute top-1 left-1 transition-transform duration-300 shadow-sm" id="toggle-knob"></div>
+</button>
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-label-caps text-primary font-bold" id="label-annual">Annually</span>
+<span class="bg-primary-container text-on-primary-container font-label-caps text-[10px] px-2 py-1 rounded-full uppercase tracking-wider">Save 20%</span>
+</div>
+</div>
+</section>
+<!-- Pricing Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mt-8 items-stretch">
+<!-- ReStart Free Card -->
+<div class="bg-surface rounded-xl p-8 flex flex-col gap-6 relative shadow-[0_4px_24px_rgba(62,100,74,0.05)] border border-outline-variant/30 transition-transform duration-300 hover:-translate-y-1">
+<div class="flex flex-col gap-2">
+<h2 class="font-headline-lg text-headline-lg text-on-background">ReStart Free</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">A gentle introduction to mindful living.</p>
+</div>
+<div class="flex items-baseline gap-1 my-4">
+<span class="font-stats-lg text-stats-lg text-on-background">$0</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">/ forever</span>
+</div>
+<ul class="flex flex-col gap-4 flex-grow mb-8">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+<span class="font-body-md text-body-md text-on-background">Access to 50+ guided meditations</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+<span class="font-body-md text-body-md text-on-background">Basic mood tracking</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+<span class="font-body-md text-body-md text-on-background">Daily reflection prompts</span>
+</li>
+<li class="flex items-start gap-3 opacity-50">
+<span class="material-symbols-outlined text-on-surface-variant text-xl">remove</span>
+<span class="font-body-md text-body-md text-on-surface-variant line-through">Personalized AI plans</span>
+</li>
+<li class="flex items-start gap-3 opacity-50">
+<span class="material-symbols-outlined text-on-surface-variant text-xl">remove</span>
+<span class="font-body-md text-body-md text-on-surface-variant line-through">Advanced consistency insights</span>
+</li>
+</ul>
+<button class="w-full py-4 rounded-full border border-primary text-primary font-label-caps text-label-caps hover:bg-surface-variant transition-colors mt-auto">Current Plan</button>
+</div>
+<!-- ReStart+ Card -->
+<div class="bg-primary-container/10 rounded-xl p-8 flex flex-col gap-6 relative shadow-[0_8px_32px_rgba(62,100,74,0.1)] border border-primary/20 breathing-glow transition-transform duration-300 hover:-translate-y-1 overflow-hidden">
+<!-- Decorative background blob -->
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-primary-container/20 rounded-full blur-3xl pointer-events-none"></div>
+<div class="flex justify-between items-start">
+<div class="flex flex-col gap-2 relative z-10">
+<h2 class="font-headline-lg text-headline-lg text-primary flex items-center gap-2">
+                            ReStart+ 
+                            <span class="material-symbols-outlined fill text-tertiary-fixed-dim text-2xl">auto_awesome</span>
+</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Deepen your practice with intelligent guidance.</p>
+</div>
+<span class="bg-primary text-on-primary font-label-caps text-[10px] px-3 py-1 rounded-full uppercase tracking-wider whitespace-nowrap z-10">Recommended</span>
+</div>
+<div class="flex items-baseline gap-1 my-4 relative z-10">
+<span class="font-stats-lg text-stats-lg text-on-background" id="price-display">$9.99</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant" id="period-display">/ month</span>
+</div>
+<ul class="flex flex-col gap-4 flex-grow mb-8 relative z-10">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+<span class="font-body-md text-body-md text-on-background">Access to 1000+ premium sessions</span>
+</li>
+<li class="flex items-start gap-3 bg-surface p-3 rounded-lg border border-primary/10">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-xl fill mt-0.5">psychology</span>
+<div>
+<span class="font-label-caps text-label-caps text-primary block mb-1">AI Guided</span>
+<span class="font-body-md text-body-md text-on-background block leading-tight">Personalized AI plans that adapt to your daily rhythm and emotional state.</span>
+</div>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+<span class="font-body-md text-body-md text-on-background">Advanced consistency tracking without judgment</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+<span class="font-body-md text-body-md text-on-background">Exclusive ambient soundscapes</span>
+</li>
+</ul>
+<button class="w-full py-4 rounded-full bg-primary text-on-primary font-label-caps text-label-caps hover:bg-surface-tint transition-all active:scale-[0.98] mt-auto relative z-10 shadow-sm">Begin Your Sanctuary</button>
+</div>
+</section>
+<!-- Testimonial / Insight -->
+<section class="w-full bg-surface-container-low rounded-xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 border border-outline-variant/20 mt-8">
+<div class="w-24 h-24 md:w-32 md:h-32 shrink-0 rounded-full overflow-hidden border-4 border-surface-container relative">
+<img alt="Peaceful sanctuary space" class="w-full h-full object-cover" data-alt="A soft, high-key photograph of a serene indoor space featuring a comfortable reading chair next to a large window with natural light pouring in, surrounded by lush green houseplants, embodying the 'High-End Sanctuary' aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwAOwGw5KQURYcOPoTdL79nBVDoEyIjKzJTsbYpcE9AviO2gok5XdxzBlGqL41geyXtMS8iMbDDBDah9IJE_5fTBlXDL5feQIDAjlOSKJHysPrVuKNABxIVe_rlb96HXUmgzsAPPWtj5B4H926_Jq2vs-cwtPq13v4v0PxjAdM78Ym23czBo9M-5Nwd5N33ZvjFK2tSOUUo9L3E49rr9eUykdeqPYmQJ9zb3Co5UROubnZ0EYhMCGJ"/>
+</div>
+<div class="flex flex-col gap-4 text-center md:text-left">
+<p class="font-body-md text-body-md text-on-background text-lg italic">"ReStart+ doesn't make me feel guilty when I miss a day. The AI just gently re-adjusts my plan. It feels like a companion, not a coach."</p>
+<span class="font-label-caps text-label-caps text-on-surface-variant">— Member since 2023</span>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-gutter bg-background border-t border-outline-variant flex flex-col items-center gap-unit max-w-[1100px] mx-auto px-container-padding-desktop text-center mt-12 pb-24 md:pb-8">
+<div class="flex gap-4 mb-2 flex-wrap justify-center">
+<a class="font-label-caps text-label-caps text-on-surface-variant opacity-70 hover:text-primary transition-opacity" href="#">Medical Disclaimer</a>
+<span class="text-on-surface-variant opacity-30">•</span>
+<a class="font-label-caps text-label-caps text-on-surface-variant opacity-70 hover:text-primary transition-opacity" href="#">Privacy Policy</a>
+<span class="text-on-surface-variant opacity-30">•</span>
+<a class="font-label-caps text-label-caps text-on-surface-variant opacity-70 hover:text-primary transition-opacity" href="#">Terms of Service</a>
+</div>
+<p class="text-label-caps font-bold text-on-surface-variant">© 2024 ReStart. Your sanctuary for beginning again.</p>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-lg bg-surface-container shadow-sm flex justify-around items-center h-20 px-container-padding-mobile">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant rounded-xl px-4 py-1 transition-transform" href="#">
+<span class="material-symbols-outlined text-2xl mb-1">home</span>
+<span class="font-label-caps text-[10px]">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant rounded-xl px-4 py-1 transition-transform" href="#">
+<span class="material-symbols-outlined text-2xl mb-1">calendar_today</span>
+<span class="font-label-caps text-[10px]">Plan</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-4 py-1 transition-transform scale-95 duration-200" href="#">
+<span class="material-symbols-outlined fill text-2xl mb-1">explore</span>
+<span class="font-label-caps text-[10px] font-bold">Discover</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant rounded-xl px-4 py-1 transition-transform" href="#">
+<span class="material-symbols-outlined text-2xl mb-1">auto_awesome</span>
+<span class="font-label-caps text-[10px]">AI</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant rounded-xl px-4 py-1 transition-transform" href="#">
+<span class="material-symbols-outlined text-2xl mb-1">person</span>
+<span class="font-label-caps text-[10px]">Profile</span>
+</a>
+</nav>
+<script>
+        // Simple toggle logic for pricing
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggle = document.getElementById('billing-toggle');
+            const knob = document.getElementById('toggle-knob');
+            const priceDisplay = document.getElementById('price-display');
+            const periodDisplay = document.getElementById('period-display');
+            
+            // Monthly is default (false)
+            let isAnnual = false;
+            
+            toggle.addEventListener('click', () => {
+                isAnnual = !isAnnual;
+                toggle.setAttribute('aria-pressed', isAnnual);
+                
+                if (isAnnual) {
+                    knob.style.transform = 'translateX(24px)';
+                    toggle.classList.remove('bg-surface-container');
+                    toggle.classList.add('bg-primary-container');
+                    knob.classList.remove('bg-primary');
+                    knob.classList.add('bg-on-primary-container');
+                    
+                    // Update price (e.g. 9.99 * 12 * 0.8 ≈ 95.90)
+                    priceDisplay.textContent = '$95.90';
+                    periodDisplay.textContent = '/ year';
+                    
+                    priceDisplay.classList.add('opacity-0');
+                    setTimeout(() => priceDisplay.classList.remove('opacity-0'), 150);
+                } else {
+                    knob.style.transform = 'translateX(0)';
+                    toggle.classList.add('bg-surface-container');
+                    toggle.classList.remove('bg-primary-container');
+                    knob.classList.add('bg-primary');
+                    knob.classList.remove('bg-on-primary-container');
+                    
+                    priceDisplay.textContent = '$9.99';
+                    periodDisplay.textContent = '/ month';
+                    
+                    priceDisplay.classList.add('opacity-0');
+                    setTimeout(() => priceDisplay.classList.remove('opacity-0'), 150);
+                }
+            });
+            
+            // Add slight transition to price change
+            priceDisplay.style.transition = 'opacity 150ms ease-in-out';
+        });
+    </script>
+</body></html>
