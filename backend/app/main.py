@@ -32,6 +32,7 @@ app.add_middleware(
 # Include Routers
 app.include_router(health.router)
 app.include_router(stories.router)
+app.include_router(auth.router)
 
 @app.get("/")
 async def root():

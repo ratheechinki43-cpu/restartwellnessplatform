@@ -7,4 +7,7 @@ export const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:80
 export const API_ENDPOINTS = {
   HEALTH: `${API_BASE_URL}/api/health`,
   STORIES: `${API_BASE_URL}/api/stories`,
+  AUTH_REGISTER: `${API_BASE_URL}/api/auth/register`,
+  AUTH_LOGIN: `${API_BASE_URL}/api/auth/login`,
+  AUTH_ME: `${API_BASE_URL}/api/auth/me`,
 };

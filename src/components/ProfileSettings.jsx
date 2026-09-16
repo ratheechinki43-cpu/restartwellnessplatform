@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
+import { useAuth } from '../context/AuthContext';
 
-export default function ProfileSettings({ darkMode, setDarkMode }) {
+export default function ProfileSettings({ darkMode, setDarkMode, onOpenAuthModal }) {
+  const { user, isLoggedIn, logout } = useAuth();
   const [activeTab, setActiveTab] = useState('overview'); // overview, settings
+
   const [accentColor, setAccentColor] = useState('sage'); // sage, ocean, amber, lavender, rose
   const [remindersEnabled, setRemindersEnabled] = useState(true);
   const [aiInsightsEnabled, setAiInsightsEnabled] = useState(true);
@@ -33,35 +36,56 @@ export default function ProfileSettings({ darkMode, setDarkMode }) {
       )}
 
       {/* Profile Header */}
-      <section class="flex flex-col md:flex-row items-center gap-8 mb-12">
-        <div class="relative w-32 h-32 md:w-36 md:h-36 rounded-full overflow-hidden breathing-pulse border-4 border-primary-container/30">
+      <section className="flex flex-col md:flex-row items-center gap-8 mb-12">
+        <div className="relative w-32 h-32 md:w-36 md:h-36 rounded-full overflow-hidden breathing-pulse border-4 border-primary-container/30">
           <img
-            alt="User Avatar"
-            class="w-full h-full object-cover"
-            src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=400"
+            alt={user?.name || "User Avatar"}
+            className="w-full h-full object-cover"
+            src={user?.avatar || "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=400"}
           />
         </div>
-        <div class="text-center md:text-left">
-          <div class="flex items-center justify-center md:justify-start gap-3 mb-1">
-            <h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary dark:text-primary-fixed">
-              Alex Morgan
+        <div className="text-center md:text-left">
+          <div className="flex items-center justify-center md:justify-start gap-3 mb-1">
+            <h1 className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary dark:text-primary-fixed">
+              {isLoggedIn ? user?.name : 'Sanctuary Guest'}
             </h1>
-            <span class="bg-primary-container/20 text-primary dark:text-primary-fixed text-xs px-3 py-1 rounded-full font-label-caps font-bold">
-              Sanctuary Member
+            <span className="bg-primary-container/20 text-primary dark:text-primary-fixed text-xs px-3 py-1 rounded-full font-label-caps font-bold">
+              {isLoggedIn ? 'Sanctuary Member' : 'Guest Account'}
             </span>
           </div>
-          <p class="text-on-surface-variant dark:text-outline-variant text-sm md:text-base mb-4 max-w-md">
-            Embracing the journey of continuous renewal. Finding balance one mindful moment at a time.
+          <p className="text-on-surface-variant dark:text-outline-variant text-sm md:text-base mb-4 max-w-md">
+            {isLoggedIn ? (user?.email || 'Embracing the journey of continuous renewal.') : 'Sign in to sync your wellness journey, personalized AI resets, and history.'}
           </p>
-          <button
-            onClick={handleUpdateProfile}
-            class="bg-primary text-on-primary rounded-full px-6 py-2.5 font-label-caps text-xs hover:bg-surface-tint transition-colors flex items-center justify-center gap-2 mx-auto md:mx-0 shadow-md"
-          >
-            <span class="material-symbols-outlined text-sm">edit</span>
-            Update My Lifestyle
-          </button>
+          <div className="flex flex-wrap justify-center md:justify-start gap-3">
+            <button
+              onClick={handleUpdateProfile}
+              className="bg-primary text-on-primary rounded-full px-6 py-2.5 font-label-caps text-xs hover:bg-surface-tint transition-colors flex items-center justify-center gap-2 shadow-md"
+            >
+              <span className="material-symbols-outlined text-sm">edit</span>
+              Update My Lifestyle
+            </button>
+
+            {!isLoggedIn ? (
+              <button
+                onClick={() => onOpenAuthModal && onOpenAuthModal('login')}
+                className="bg-surface-container-high dark:bg-surface-container text-on-surface rounded-full px-6 py-2.5 font-label-caps text-xs hover:bg-surface-variant transition-colors flex items-center justify-center gap-2 border border-outline-variant/30"
+              >
+                <span className="material-symbols-outlined text-sm">login</span>
+                Sign In / Sign Up
+              </button>
+            ) : (
+              <button
+                onClick={logout}
+                className="bg-error-container/30 text-error rounded-full px-5 py-2.5 font-label-caps text-xs hover:bg-error-container/50 transition-colors flex items-center justify-center gap-1.5 border border-error/20"
+              >
+                <span className="material-symbols-outlined text-sm">logout</span>
+                Sign Out
+              </button>
+            )}
+          </div>
         </div>
       </section>
+
 
       {/* Stats Bento Grid */}
       <section class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
